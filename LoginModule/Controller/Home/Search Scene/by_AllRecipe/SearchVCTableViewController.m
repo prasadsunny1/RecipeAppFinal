@@ -268,7 +268,7 @@
     
     if (_recipeType == 0)
     {
-        recipeDisplayVc.strNavTitle = @"All Recipes";
+        recipeDisplayVc.strNavTitle = @"Recipes";
     }
     else if (_recipeType == 1)
     {
@@ -284,7 +284,7 @@
     }
     else if (_recipeType == 4)
     {
-        recipeDisplayVc.strNavTitle = @"My Recipe";
+        recipeDisplayVc.strNavTitle = @"My Recipes";
     }
     
     [self.navigationController pushViewController:recipeDisplayVc animated:true];

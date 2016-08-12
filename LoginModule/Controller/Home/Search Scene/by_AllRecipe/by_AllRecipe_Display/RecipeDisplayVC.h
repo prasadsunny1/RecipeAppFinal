@@ -55,4 +55,7 @@
 @property (nonatomic, copy) NSString *contentDescription;
 @property (nonatomic, copy) NSString *contentTitle;
 
+@property (strong,nonatomic) NSString *strNavTitle;
+
+
 @end

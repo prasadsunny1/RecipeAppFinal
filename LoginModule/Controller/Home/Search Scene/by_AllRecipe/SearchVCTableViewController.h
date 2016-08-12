@@ -41,6 +41,7 @@ typedef enum RecipeType : NSUInteger {
 @property (nonatomic,strong) NSString *strRegionName;
 @property (nonatomic,strong) NSString *strRecipeFrom;
 @property (nonatomic,strong) NSString *strTime;
+@property (nonatomic,strong) NSString *strNavTitle;
 
 
 

@@ -104,12 +104,12 @@
                   moduleName = "LoginModule"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/indianic/Downloads/RecipeApp%20with%20one%20module%20remaining%202/LoginModule/Controller/Login/ViewController.m"
-                  timestampString = "492623052.391771"
+                  timestampString = "492700679.820001"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "316"
                   endingLineNumber = "316"
-                  offsetFromSymbolStart = "468">
+                  offsetFromSymbolStart = "598">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
@@ -119,12 +119,12 @@
                   moduleName = "LoginModule"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/indianic/Downloads/RecipeApp%20with%20one%20module%20remaining%202/LoginModule/Controller/Login/ViewController.m"
-                  timestampString = "492623052.392012"
+                  timestampString = "492700679.82019"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "316"
                   endingLineNumber = "316"
-                  offsetFromSymbolStart = "496">
+                  offsetFromSymbolStart = "666">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -142,6 +142,22 @@
             startingLineNumber = "67"
             endingLineNumber = "67"
             landmarkName = "-addUser:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoginModule/Controller/Home/Search Scene/by_AllRecipe/by_AllRecipe_Display/RecipeDisplayVC.m"
+            timestampString = "492700155.508328"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "237"
+            endingLineNumber = "237"
+            landmarkName = "-btnShare:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

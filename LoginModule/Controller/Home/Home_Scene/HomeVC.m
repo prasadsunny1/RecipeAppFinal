@@ -21,6 +21,7 @@
     [super viewDidLoad];
     
     //navigation bar methods
+   
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Cochin-Italic" size:21], NSForegroundColorAttributeName: [UIColor whiteColor]};
     
     
@@ -122,6 +123,7 @@
    
     
     objVC.result = result;
+    objVC.strNavTitle = @"Home";
     [self.navigationController pushViewController:objVC animated:true];
 
 }

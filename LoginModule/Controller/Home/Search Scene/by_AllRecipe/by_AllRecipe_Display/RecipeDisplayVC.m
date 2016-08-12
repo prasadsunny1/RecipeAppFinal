@@ -22,6 +22,7 @@
     [super viewDidLoad];
    
     // navigation bar methods
+    self.navigationItem.title = _strNavTitle;
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Cochin-Italic" size:21], NSForegroundColorAttributeName: [UIColor whiteColor]};
     
    
@@ -237,9 +238,7 @@
         
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [controller  setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
-        NSLog(@"this %@",[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]);
-        
+        [controller setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
       
        
         [controller addImage:_RecipeDisplayCoverPhoto.image];

@@ -118,6 +118,7 @@
     SearchVCTableViewController *objsVc = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchVCTableViewController"];
     objsVc.recipeType = 1;
     objsVc.strCategoryName = [cell.name.text lowercaseString];
+    objsVc.strNavTitle = @"Category";
     [self.navigationController pushViewController:objsVc animated:true];
     NSLog(@"Cell tapped %@",cell.name.text);
 }

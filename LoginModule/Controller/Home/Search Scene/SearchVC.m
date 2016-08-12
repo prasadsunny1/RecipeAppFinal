@@ -35,12 +35,14 @@
 - (IBAction)btnByAllRecipes:(UIButton *)sender {
     
     SearchVCTableViewController *objsVc = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchVCTableViewController"];
+    objsVc.strNavTitle = @"Recipes";
     [self.navigationController pushViewController:objsVc animated:true];
 }
 
 - (IBAction)btnSearchByIngredients:(UIButton *)sender {
     
     SearchByIngredientsViewController *searchVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchByIngredientsViewController"];
+    
     [self.navigationController pushViewController:searchVC animated:true];
 
 }
@@ -68,6 +70,7 @@
     objsVc.recipeType = 4;
     objsVc.strRecipeFrom =[AppDelegate sharedInstance].userId;
     NSLog(@"id %@",[AppDelegate sharedInstance].userId);
+    objsVc.strNavTitle = @"My Recipes";
     [self.navigationController pushViewController:objsVc animated:true];
 
     

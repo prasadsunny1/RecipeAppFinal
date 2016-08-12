@@ -67,6 +67,7 @@
     objVC.recipeType = 2;
     objVC.strRegionName = recipe.regionName.lowercaseString;
     NSLog(@"name is %@",recipe.regionName.lowercaseString);
+    objVC.strNavTitle = @"Region";
     [self.navigationController pushViewController:objVC animated:YES];
     
 }

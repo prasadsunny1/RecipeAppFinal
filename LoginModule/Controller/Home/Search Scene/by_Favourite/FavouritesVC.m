@@ -74,6 +74,7 @@
     objVC.recipeType = 3;
     objVC.strTime = recipe.timeMins.lowercaseString;
     NSLog(@"time %@",recipe.timeMins.lowercaseString);
+    objVC.strNavTitle = @"Time";
     [self.navigationController pushViewController:objVC animated:YES];
     
 }

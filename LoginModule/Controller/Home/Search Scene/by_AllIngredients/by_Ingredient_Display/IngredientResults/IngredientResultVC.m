@@ -152,6 +152,7 @@
     RecipeDisplayVC *objVC = [self.storyboard instantiateViewControllerWithIdentifier:@"RecipeDisplayVC"];
     
     objVC.result = result;
+    objVC.strNavTitle = @"Ingredients";
     [self.navigationController pushViewController:objVC animated:YES];
 }
 

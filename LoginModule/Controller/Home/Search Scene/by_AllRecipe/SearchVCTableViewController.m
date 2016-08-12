@@ -19,7 +19,9 @@
     [super viewDidLoad];
    
     // navigation bar methods
+    self.navigationItem.title= _strNavTitle;
     self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Cochin-Italic" size:21], NSForegroundColorAttributeName: [UIColor whiteColor]};
+    
     
     
     // registering search bar delegate to this(self class)
@@ -263,6 +265,28 @@
     }
     
    recipeDisplayVc.result = result;
+    
+    if (_recipeType == 0)
+    {
+        recipeDisplayVc.strNavTitle = @"All Recipes";
+    }
+    else if (_recipeType == 1)
+    {
+        recipeDisplayVc.strNavTitle = @"Category";
+    }
+    else if (_recipeType == 2)
+    {
+        recipeDisplayVc.strNavTitle = @"Region";
+    }
+    else if (_recipeType == 3)
+    {
+        recipeDisplayVc.strNavTitle = @"Time";
+    }
+    else if (_recipeType == 4)
+    {
+        recipeDisplayVc.strNavTitle = @"My Recipe";
+    }
+    
     [self.navigationController pushViewController:recipeDisplayVc animated:true];
 }
 

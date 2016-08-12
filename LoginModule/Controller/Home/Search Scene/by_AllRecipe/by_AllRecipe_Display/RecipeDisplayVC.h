@@ -24,6 +24,7 @@
  
 
 
+
 @interface RecipeDisplayVC : UIViewController <CCDropDownMenuDelegate>
 {
     MBProgressHUD *progress;
@@ -56,6 +57,8 @@
 @property (nonatomic, copy) NSString *contentTitle;
 
 @property (strong,nonatomic) NSString *strNavTitle;
+
+@property (nonatomic,strong) NSString *strTabSet;
 
 
 @end

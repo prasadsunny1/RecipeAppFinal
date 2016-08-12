@@ -39,6 +39,13 @@
    
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [self.tabBarController setSelectedIndex:2];
+    
+}
+
 #pragma mark - sliding cell methods
 - (void)addObservers
 {

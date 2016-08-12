@@ -26,6 +26,14 @@
     _cvData = [NSMutableArray arrayWithObjects:[[Recipe alloc]initwithtimeImage:@"alarm3" andTimeMins:@"20 Mins" andTimeColor:[UIColor colorWithRed:0.5647 green:0.9333 blue:0.5647 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm7" andTimeMins:@"30 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 1.0 blue:0.0 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm8" andTimeMins:@"45 Mins" andTimeColor: [UIColor colorWithRed:0.6784 green: 0.8471 blue:0.9020 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm6" andTimeMins:@"60 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 0.4118 blue:0.7059 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm4" andTimeMins:@"90 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 0.2706 blue:0.0 alpha:1.0f]], nil];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    
+    [self.tabBarController setSelectedIndex:3];
+    
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

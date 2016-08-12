@@ -20,7 +20,7 @@ typedef enum RecipeType : NSUInteger {
     kByCategory,
     kByRegion,
     kMYTime,
-    kMyRecipes
+    kMyRecipes,
 } RecipeType;
 
 @interface SearchVCTableViewController : UITableViewController
@@ -42,6 +42,7 @@ typedef enum RecipeType : NSUInteger {
 @property (nonatomic,strong) NSString *strRecipeFrom;
 @property (nonatomic,strong) NSString *strTime;
 @property (nonatomic,strong) NSString *strNavTitle;
+@property (nonatomic,strong) NSString *strTabSet;
 
 
 

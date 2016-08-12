@@ -233,6 +233,7 @@
         [_shareProp setImage:[UIImage imageNamed:@"shares.png"] forState:UIControlStateNormal];
     }
     
+#warning change !
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];

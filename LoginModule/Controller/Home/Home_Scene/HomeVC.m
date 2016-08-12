@@ -29,14 +29,6 @@
     [self getAllRecipe];
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    
-    [self.tabBarController setSelectedIndex:0];
-    
-}
-
-
 -(void)getAllRecipe{
     
     if ([AppDelegate sharedInstance].isInternetAvailable)
@@ -132,8 +124,6 @@
     
     objVC.result = result;
     objVC.strNavTitle = @"Home";
-    
-
     [self.navigationController pushViewController:objVC animated:true];
 
 }

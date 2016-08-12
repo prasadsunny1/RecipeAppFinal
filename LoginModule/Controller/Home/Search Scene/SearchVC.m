@@ -24,14 +24,6 @@
 
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    
-    [self.tabBarController setSelectedIndex:1];
-    
-}
-
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     

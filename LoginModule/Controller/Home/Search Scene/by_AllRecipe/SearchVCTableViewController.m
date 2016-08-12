@@ -33,11 +33,6 @@
     
 }
 
--(void)viewDidAppear:(BOOL)animated
-{
-    
-}
-
 -(void)getAllRecipe{
     
     if ([AppDelegate sharedInstance].isInternetAvailable)

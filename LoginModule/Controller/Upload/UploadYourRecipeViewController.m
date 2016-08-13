@@ -27,6 +27,7 @@
     NSMutableArray *arrCopyOfAllRecipeData;
     NSMutableDictionary *dictStepToSend;
     NSMutableDictionary *dictIngredientstosend;
+    NSMutableDictionary *dictIngredientQuantityToSend;
     NSArray *pickerCategory;
     NSMutableString *strRecipeCategory;
     NSString *user,*userid;
@@ -45,7 +46,7 @@
     [super viewDidLoad];
     strRecipeCategory =[NSMutableString new];
     dictIngredientstosend =[[NSMutableDictionary alloc]init];
-
+    dictIngredientQuantityToSend =[[NSMutableDictionary alloc]init];
     dictStepToSend =[[NSMutableDictionary alloc]init];
     arrAllRecipeData=[NSMutableArray new];
     dictTempRecipe=[NSMutableDictionary new];
@@ -136,12 +137,23 @@
     }
     NSLog(@"dictTosend :  %@",dictStepToSend);
     for (int i=0; i<[arrCopyOfAllRecipeData[0][@"ingredient"] count]; i++) {
-        [dictIngredientstosend setObject:[NSString stringWithFormat:@"%@ %@",arrCopyOfAllRecipeData[0][@"ingredient"][i][@"quantity"],arrCopyOfAllRecipeData[0][@"ingredient"][i][@"name"]] forKey:[NSString stringWithFormat:@"%d",i]];
+        [dictIngredientstosend setObject:arrCopyOfAllRecipeData[0][@"ingredient"][i][@"name"] forKey:[NSString stringWithFormat:@"%d",i]];
     
     
     }
     NSLog(@"ingredients to send %@",dictIngredientstosend);
     
+    
+    
+    //dictIngredientstosend
+    for (int i=0; i<[arrCopyOfAllRecipeData[0][@"ingredient"] count]; i++) {
+        [dictIngredientQuantityToSend setObject:arrCopyOfAllRecipeData[0][@"ingredient"][i][@"quantity"] forKey:[NSString stringWithFormat:@"%d",i]];
+        
+        
+    }
+    NSLog(@"ingredients to send %@",dictIngredientQuantityToSend);
+
+    ///
     [self sendData];
     
 }
@@ -193,6 +205,7 @@
                                   @"serves": arrCopyOfAllRecipeData[0][@"serves"],
                                   @"time": @"15",
                                   @"ingredient": dictIngredientstosend,
+                                  @"ingredient_quantity":dictIngredientQuantityToSend,
                                   @"video": @"link",
                                   @"steps": dictStepToSend,
                                   @"location": @"india",

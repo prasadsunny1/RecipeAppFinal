@@ -13,6 +13,7 @@
 @interface RecipeDisplayVC ()
 {
     int a;
+    NSMutableArray *arrIngredientTable;
 }
 @end
 
@@ -29,24 +30,48 @@
     
     // drop down menu  methods
     CGRect frame = CGRectMake(0, 253, 320, 34);
-    
+    NSLog(@"result is %@", _result);
    _menu1 = [[ManaDropDownMenu alloc] initWithFrame:frame title:@"Ingredients with Quantity"];
     _menu1.delegate = self;
     
     NSMutableArray *ing = [NSMutableArray array];
+    NSMutableArray *ingforQuan = [NSMutableArray array];
+    
+    //array for ingredient table
+     arrIngredientTable=[NSMutableArray new];
+    
+    
+    NSMutableDictionary *ingquant  = [NSMutableDictionary dictionary];
+    for (NSMutableDictionary *ingredientquant in [_result valueForKey:@"ingredient_quantity"]) {
+        
+        [ingquant setValue:ingredientquant forKey:@"recipeing1"];
+        
+        
+        [ingforQuan addObject:_result[@"ingredient_quantity"][ingquant[@"recipeing1"]]];
+        
+    }
+    NSLog(@"ingforQuan %@",ingforQuan);
+
+    
     NSMutableDictionary *ingname  = [NSMutableDictionary dictionary];
-    for (NSMutableDictionary *ingredient in [_result valueForKey:@"ingredient"]) {
-        
+    for (NSMutableDictionary *ingredient in [_result valueForKey:@"ingredient"])
+    {
         [ingname setValue:ingredient forKey:@"recipeing"];
-        
+       
       
         [ing addObject:_result[@"ingredient"][ingname[@"recipeing"]]];
         
     }
-
+    NSLog(@"ing %@",ing);
     
+   
     _menu1.numberOfRows = ing.count;
-    _menu1.textOfRows = ing;
+    for (int i=0; i<ing.count; i++) {
+       
+        [arrIngredientTable addObject:[NSString stringWithFormat:@"%@-%@",ing[i],ingforQuan[i]]];
+    }
+    _menu1.textOfRows = arrIngredientTable;
+    
    [self.view addSubview:_menu1];
 
 
@@ -73,7 +98,7 @@
     
     
     
-    [_RecipeDisplayCoverPhoto setImageWithURL:[NSURL URLWithString:[_result valueForKey:@"coverimage"]]placeholderImage:nil];
+    [_RecipeDisplayCoverPhoto setImageWithURL:[NSURL URLWithString:[_result valueForKey:@"coverimage"]]placeholderImage:[UIImage imageNamed:@"placeholder"]];
     
     
     //recipe name text and display properties

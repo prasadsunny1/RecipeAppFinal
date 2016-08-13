@@ -84,7 +84,7 @@
     
     
     //defining properties of recipe name label
-    [cell.topRatedRecipeHomeImgs setImageWithURL:[NSURL URLWithString:_arrDailyRecipes[indexPath.row][@"coverimage"]] placeholderImage:nil];
+    [cell.topRatedRecipeHomeImgs setImageWithURL:[NSURL URLWithString:_arrDailyRecipes[indexPath.row][@"coverimage"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
   
     
     cell.homeTopRatedRecipeName.text = [_arrDailyRecipes objectAtIndex:indexPath.row][@"name"];

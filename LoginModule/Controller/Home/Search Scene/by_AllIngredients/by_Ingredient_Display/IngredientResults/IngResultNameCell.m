@@ -10,5 +10,14 @@
 
 @implementation IngResultNameCell
 
+-(void)setHighlighted:(BOOL)highlighted
+{
+    if (highlighted)
+    {
+        self.layer.opacity = 1.0;
+        //or whatever you want here
+    }
+    
+}
 
 @end

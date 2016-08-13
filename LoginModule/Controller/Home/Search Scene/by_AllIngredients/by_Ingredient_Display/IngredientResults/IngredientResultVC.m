@@ -50,7 +50,7 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
-
+    
     
     NSMutableString *filter = [_finalResult objectAtIndex:indexPath.row];
 
@@ -113,7 +113,7 @@
     cell.backgroundColor = [UIColor whiteColor];
     
     //image view of cell
-    [cell.imgCover setImageWithURL:[NSURL URLWithString:[_searchedResult objectAtIndex:indexPath.row][@"coverimage"]] placeholderImage:nil];
+    [cell.imgCover setImageWithURL:[NSURL URLWithString:[_searchedResult objectAtIndex:indexPath.row][@"coverimage"]] placeholderImage:[UIImage imageNamed:@"placeholder"]];
    
     
     // recipe name label

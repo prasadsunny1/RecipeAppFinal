@@ -158,7 +158,7 @@
     cell.backgroundColor = [UIColor whiteColor];
     
     //image view of cell
-    [cell.AllRecipeDisplayImageProp setImageWithURL:[NSURL URLWithString:[result valueForKey:@"coverimage"]]placeholderImage:nil];
+    [cell.AllRecipeDisplayImageProp setImageWithURL:[NSURL URLWithString:[result valueForKey:@"coverimage"]]placeholderImage:[UIImage imageNamed:@"placeholder"]];
 
     //image view for recipe type
     if ([[result valueForKey:@"nonveg"] isEqual: @"0"])
@@ -249,7 +249,7 @@
 
 -(void) showDetailsForIndexPath:(NSIndexPath*)indexPath
 {
-    [self.searchBar resignFirstResponder];
+    
     RecipeDisplayVC  * recipeDisplayVc = [self.storyboard instantiateViewControllerWithIdentifier:@"RecipeDisplayVC"];
 
    

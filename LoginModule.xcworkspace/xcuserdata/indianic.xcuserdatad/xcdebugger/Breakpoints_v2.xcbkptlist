@@ -71,70 +71,6 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "LoginModule/Controller/Login/ViewController.m"
-            timestampString = "492621939.64318"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "-callFacebookLoginWebService:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "LoginModule/Controller/Login/ViewController.m"
-            timestampString = "492621939.64318"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "316"
-            endingLineNumber = "316"
-            landmarkName = "-callFacebookLoginWebService:"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[ViewController callFacebookLoginWebService:]_block_invoke"
-                  moduleName = "LoginModule"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/indianic/Downloads/RecipeApp%20with%20one%20module%20remaining%202/LoginModule/Controller/Login/ViewController.m"
-                  timestampString = "492700679.820001"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "316"
-                  endingLineNumber = "316"
-                  offsetFromSymbolStart = "598">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "__46-[ViewController callFacebookLoginWebService:]_block_invoke"
-                  moduleName = "LoginModule"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/indianic/Downloads/RecipeApp%20with%20one%20module%20remaining%202/LoginModule/Controller/Login/ViewController.m"
-                  timestampString = "492700679.82019"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "316"
-                  endingLineNumber = "316"
-                  offsetFromSymbolStart = "666">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "LoginModule/Controller/Login/SignUpViewController.m"
             timestampString = "492617875.140267"
             startingColumnNumber = "9223372036854775807"
@@ -152,12 +88,28 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "LoginModule/Controller/Home/Search Scene/by_AllRecipe/by_AllRecipe_Display/RecipeDisplayVC.m"
-            timestampString = "492700155.508328"
+            timestampString = "492779613.425598"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "237"
-            endingLineNumber = "237"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
             landmarkName = "-btnShare:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "LoginModule/Controller/Home/Search Scene/by_AllRecipe/by_AllRecipe_Display/RecipeDisplayVC.m"
+            timestampString = "492779925.309623"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

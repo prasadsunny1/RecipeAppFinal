@@ -42,16 +42,18 @@
     
    //setting collection view hidden on load
     _propForImgredientsImages.hidden = YES;
-   
-    
-    [self setPropIngredientSearchBar:nil];
-    self.propIngredientSearchBar.text = nil;
-    [_propForImgredientsImages reloadData];
 
-    
      [self getAllRecipe];
     
 }
+
+- (void)viewDidUnload
+{
+    [self setPropIngredientSearchBar:nil];
+    [super viewDidUnload];
+}
+
+
 
 -(void)getAllRecipe{
     
@@ -115,14 +117,14 @@
     
    
     
-    if (_isTapped == YES) {
-         _propForImgredientsImages.hidden = NO;
-    }
-    else
-    {
-        _propForImgredientsImages.hidden = YES;
-        
-    }
+//    if (_isTapped == YES) {
+//         _propForImgredientsImages.hidden = NO;
+//    }
+//    else
+//    {
+//        _propForImgredientsImages.hidden = YES;
+//        
+//    }
 
 //
 }
@@ -227,7 +229,7 @@
         searchString = _searchWords[i];
     }
 
-    if(_searchWords.count == 0)
+    if(text.length == 0)
     {
         _isFiltered = FALSE;
     }
@@ -259,7 +261,7 @@
     
      Recipe *recipe;
     
-    if(_isFiltered)
+    if(self.isFiltered)
         recipe = [_arrfilterCollection objectAtIndex:indexPath.row];
     else
         recipe = [_arrCollection objectAtIndex:indexPath.row];

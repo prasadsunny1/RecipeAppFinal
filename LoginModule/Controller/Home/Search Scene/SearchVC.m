@@ -52,6 +52,7 @@
     //instantiating categories view controller on button click
     
     CategoriesVC *objCategoriesVc = [self.storyboard instantiateViewControllerWithIdentifier:@"CategoriesVC"];
+    objCategoriesVc.isBackOn = @"Yes";
     [self.navigationController pushViewController:objCategoriesVc animated:true];
     
 }
@@ -79,12 +80,9 @@
 
 #pragma mark - bar button tapped methods
 
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 
-- (IBAction)btnBarBackFromSearchVC:(UIBarButtonItem *)sender {
-    
-    HomeVC *hVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
-    [self.navigationController pushViewController:hVC animated:true];
-}
 @end

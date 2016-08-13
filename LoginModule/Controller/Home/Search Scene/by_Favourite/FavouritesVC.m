@@ -80,14 +80,11 @@
 }
 
 #pragma mark - bar button on tapped methods
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
-    
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+  [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];  
     
 }
 
-- (IBAction)onBack:(UIBarButtonItem *)sender
-{
-    
-    [self.navigationController popViewControllerAnimated:YES];
-}
+
 @end

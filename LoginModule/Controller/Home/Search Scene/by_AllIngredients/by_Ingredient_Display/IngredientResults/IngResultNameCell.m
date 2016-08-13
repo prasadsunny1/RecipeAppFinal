@@ -14,9 +14,10 @@
 {
     if (highlighted)
     {
-        self.layer.opacity = 1.0;
+        self.layer.opacity = 0.2;
         //or whatever you want here
     }
+
     
 }
 

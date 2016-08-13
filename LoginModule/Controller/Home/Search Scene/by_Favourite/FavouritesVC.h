@@ -15,7 +15,7 @@
 
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionViewFav;
 - (IBAction)onDrawer:(UIBarButtonItem *)sender;
-- (IBAction)onBack:(UIBarButtonItem *)sender;
+
 @property (strong,nonatomic) NSMutableArray* cvData;
 
 @end

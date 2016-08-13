@@ -76,9 +76,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
-            if (error) {
-                NSLog(@"%@", error);
-            } else {
+            if (error)
+            {
+                [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Request Has Been Timed Out. \n Please Try Again"];
+            } else
+            {
                 _arrDailyRecipes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
@@ -91,6 +93,7 @@
     }
     else
     {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Inter Is Not Available \n Please Try Again"];
         
     }
     
@@ -114,19 +117,17 @@
     }
        [_propForImgredientsImages reloadData];
     [self setPropIngredientSearchBar:nil];
-    
-   
-    
-//    if (_isTapped == YES) {
-//         _propForImgredientsImages.hidden = NO;
-//    }
-//    else
-//    {
-//        _propForImgredientsImages.hidden = YES;
-//        
-//    }
 
-//
+    if (_isTapped == YES) {
+         _propForImgredientsImages.hidden = NO;
+    }
+    else
+    {
+        _propForImgredientsImages.hidden = YES;
+        
+    }
+
+
 }
 
 
@@ -358,6 +359,8 @@
 }
 
 
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 @end

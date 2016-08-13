@@ -50,8 +50,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
-            if (error) {
-                NSLog(@"%@", error);
+            if (error)
+            {
+               [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Request Has Been Timed Out. \n Please Try Again"];
             } else {
                 _arrDailyRecipes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 dispatch_async(dispatch_get_main_queue(), ^{
@@ -65,6 +66,7 @@
     }
     else
     {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Internet Is Not Available. \n Please Try Again"];
         
     }
 }
@@ -134,4 +136,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+}
 @end

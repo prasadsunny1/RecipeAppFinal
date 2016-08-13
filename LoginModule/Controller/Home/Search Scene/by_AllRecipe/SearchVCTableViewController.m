@@ -76,9 +76,11 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 [MBProgressHUD hideHUDForView:self.view animated:YES];
             });
-            if (error) {
-                NSLog(@"%@", error);
-            } else {
+            if (error)
+            {
+                [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Request Has Been Timed Out. \n Please Try Again"];
+            } else
+            {
                 _arrDailyRecipes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 dispatch_async(dispatch_get_main_queue(), ^{
                     [_allRecipeTable reloadData];
@@ -91,6 +93,7 @@
     }
     else
     {
+        [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Internet Is Not Available"];
         
     }
 }
@@ -297,7 +300,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 
 

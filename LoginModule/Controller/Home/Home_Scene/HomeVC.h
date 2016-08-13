@@ -17,5 +17,6 @@
 
 @property (strong, nonatomic) IBOutlet UICollectionView *homeTopRatedRecipeCV;
 @property (strong, nonatomic) NSMutableArray* arrDailyRecipes;
+- (IBAction)onDrawer:(UIBarButtonItem *)sender;
 
 @end

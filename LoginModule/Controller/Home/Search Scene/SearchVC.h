@@ -21,7 +21,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnByRegionProp;
 @property (strong, nonatomic) IBOutlet UIButton *btnByFavouritesProp;
 
-- (IBAction)btnBarBackFromSearchVC:(UIBarButtonItem *)sender;
+
 - (IBAction)btnByAllRecipes:(UIButton *)sender;
 - (IBAction)btnSearchByIngredients:(UIButton *)sender;
 - (IBAction)btnSearchByCategories:(UIButton *)sender;

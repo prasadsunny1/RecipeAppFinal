@@ -293,22 +293,61 @@
     
     UIAlertAction *thirdAction = [UIAlertAction actionWithTitle:@"Share Via Mail" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
      {
-         NSLog(@"this is for mail");
-                      
+         NSString *emailTitle = @"Shared A Recipe With Recipe App";
+         NSString *messageBody = [NSString stringWithFormat:@"Hey! Check out this exciting recipe named %@ \n %@",[_result valueForKey:@"name"],[NSURL URLWithString:[_result valueForKey:@"coverimage"]]];
+         
+         NSArray *toRecipents = [NSArray arrayWithObject:[AppDelegate sharedInstance].userEmail];
+         
+         MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+         mc.mailComposeDelegate = self;
+         [mc setSubject:emailTitle];
+         [mc setMessageBody:messageBody isHTML:NO];
+         [mc setToRecipients:toRecipents];
+         
+         [self presentViewController:mc animated:YES completion:NULL];
+         
                                       
     }];
+    UIAlertAction *cancle = [UIAlertAction actionWithTitle:@"Cancle" style:UIAlertActionStyleDefault handler:nil];
 
     
     [alert addAction:firstAction];
     [alert addAction:secondAction];
     [alert addAction:thirdAction];
+    [alert addAction:cancle];
     
     [self presentViewController:alert animated:YES completion:nil];
   
 }
 
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+           [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Mail Has Benn Cancled"];
+            break;
+        case MFMailComposeResultSaved:
+            [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Mail Saved"];
+            break;
+        case MFMailComposeResultSent:
+            [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Mail Sent"];
+            break;
+        case MFMailComposeResultFailed:
+           [[AppDelegate sharedInstance]showAlertInController:self WithMessage:@"Mail Sending Failed. \n Please try again"];
+            break;
+        default:
+            break;
+    }
+    
+    // Close the Mail Interface
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 #pragma mark - on drawer button tapped
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 @end

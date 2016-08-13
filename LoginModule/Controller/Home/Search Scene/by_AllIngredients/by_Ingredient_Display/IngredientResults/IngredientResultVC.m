@@ -169,6 +169,8 @@
    
 }
 
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 @end

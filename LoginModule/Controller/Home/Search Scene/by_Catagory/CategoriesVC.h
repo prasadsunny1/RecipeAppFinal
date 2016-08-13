@@ -10,6 +10,7 @@
 #import <MKSlidingTableViewCell.h>
 #import <MKActionTableViewCell.h>
 #import "HomeVC.h"
+#import "UploadYourRecipeViewController.h"
 
 @interface CategoriesVC : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
@@ -20,6 +21,9 @@
 - (IBAction)onBack:(UIBarButtonItem *)sender;
 - (IBAction)onDrawer:(UIBarButtonItem *)sender;
 @property (strong, nonatomic) UIView *cellView;
+@property (strong, nonatomic) NSString *isBackOn;
+
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *btnBack;
 
 
 @end

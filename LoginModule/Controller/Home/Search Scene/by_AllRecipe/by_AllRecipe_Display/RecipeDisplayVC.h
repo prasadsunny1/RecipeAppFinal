@@ -21,10 +21,12 @@
 #import "UIKit+AFNetworking.h"
 #import <Social/Social.h>
 #import <Accounts/Accounts.h>
+#import <MessageUI/MessageUI.h>
+#import "AppDelegate.h"
  
 
 
-@interface RecipeDisplayVC : UIViewController <CCDropDownMenuDelegate>
+@interface RecipeDisplayVC : UIViewController <CCDropDownMenuDelegate,MFMailComposeViewControllerDelegate>
 {
     MBProgressHUD *progress;
 

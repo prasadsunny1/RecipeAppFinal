@@ -10,6 +10,9 @@
 #import "SearchVCTableViewController.h"
 
 @interface CategoriesVC ()<MKSlidingTableViewCellDelegate>
+{
+    int a;
+}
 @property (nonatomic, copy) NSMutableArray *data;
 @property (nonatomic, strong) MKSlidingTableViewCell *activeCell;
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
@@ -22,7 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    
+    a=0;
     //navigation bar methods
    self.navigationController.navigationBar.titleTextAttributes = @{NSFontAttributeName: [UIFont fontWithName:@"Cochin-Italic" size:21], NSForegroundColorAttributeName: [UIColor whiteColor]};
     
@@ -35,8 +39,23 @@
     
     [self addObservers];
 
-    
+    if ([_isBackOn isEqualToString:@"Yes"])
+    {
+        self.navigationItem.hidesBackButton = YES;
+
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItems = nil;
+        
+    }
    
+}
+
+-(void)viewDidAppear:(BOOL)animated
+{
+   
+    
 }
 
 #pragma mark - sliding cell methods
@@ -157,12 +176,28 @@
 
 
 #pragma mark - background (slided) button methods
-- (IBAction)btnCategoriesAddNew:(UIButton *)sender {
-    NSLog(@"new clicked ");
+- (IBAction)btnCategoriesAddNew:(UIButton *)sender
+{
+    UploadYourRecipeViewController *objVC = [self.storyboard instantiateViewControllerWithIdentifier:@"UploadYourRecipeViewController"];
+    [self.navigationController pushViewController:objVC animated:YES];
 }
 
-- (IBAction)btnCategoriesFav:(UIButton *)sender {
-     NSLog(@"fav clicked ");
+- (IBAction)btnCategoriesFav:(UIButton *)sender
+{
+    a++;
+    if(!(a%2==0))
+    {
+      
+        sender.backgroundColor = [UIColor greenColor];
+        sender.imageView.layer.backgroundColor = [UIColor greenColor].CGColor;
+        sender.imageView.layer.masksToBounds=YES;
+    }
+    else
+    {
+       sender.backgroundColor = [UIColor colorWithRed:(159.0/255.0) green:(7.0/255.0) blue:(18.0/255.0) alpha:1.0];
+
+    }
+
 }
 
 - (IBAction)btnCategoriesPopular:(UIButton *)sender {
@@ -178,6 +213,9 @@
     [self.navigationController popViewControllerAnimated:YES];
 }
 
-- (IBAction)onDrawer:(UIBarButtonItem *)sender {
+- (IBAction)onDrawer:(UIBarButtonItem *)sender
+{
+    
+    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
 }
 @end

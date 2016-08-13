@@ -38,7 +38,7 @@
     NSMutableArray *ingforQuan = [NSMutableArray array];
     
     //array for ingredient table
-     arrIngredientTable=[NSMutableArray new];
+    arrIngredientTable=[NSMutableArray new];
     
     
     NSMutableDictionary *ingquant  = [NSMutableDictionary dictionary];
@@ -64,12 +64,14 @@
     }
     NSLog(@"ing %@",ing);
     
-   
     _menu1.numberOfRows = ing.count;
-    for (int i=0; i<ing.count; i++) {
+    
+    for (int i=0; i<ing.count; i++)
+    {
        
         [arrIngredientTable addObject:[NSString stringWithFormat:@"%@-%@",ing[i],ingforQuan[i]]];
     }
+    
     _menu1.textOfRows = arrIngredientTable;
     
    [self.view addSubview:_menu1];
@@ -258,19 +260,50 @@
         [_shareProp setImage:[UIImage imageNamed:@"shares.png"] forState:UIControlStateNormal];
     }
     
-#warning change !
-    if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
-        
-        SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        
-        [controller setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
-      
-       
-        [controller addImage:_RecipeDisplayCoverPhoto.image];
-        
-        [self presentViewController:controller animated:YES completion:Nil];
-        
-    }
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Share" message:@"Select Your Choice" preferredStyle:UIAlertControllerStyleActionSheet];
+    
+    UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Share Via Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+    {
+        if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+        {
+            SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+            
+            [controller addURL:[NSURL URLWithString:@"https://github.com/prasadsunny1/RecipeAppFinal"]];
+            [controller setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
+            [controller addImage:_RecipeDisplayCoverPhoto.image];
+            [self presentViewController:controller animated:YES completion:Nil];
+        }
+
+    }];
+   
+    UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Share Via Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+    {
+                if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                {
+                    SLComposeViewController *tweetSheet = [SLComposeViewController
+                                                           composeViewControllerForServiceType:SLServiceTypeTwitter];
+                    [tweetSheet setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
+                    [tweetSheet addImage:_RecipeDisplayCoverPhoto.image];
+                    [tweetSheet addURL:[NSURL URLWithString:@"https://github.com/prasadsunny1/RecipeAppFinal"]];
+                    [self presentViewController:tweetSheet animated:YES completion:nil];
+                }
+      }];
+    
+    UIAlertAction *thirdAction = [UIAlertAction actionWithTitle:@"Share Via Mail" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
+     {
+         NSLog(@"this is for mail");
+                      
+                                      
+    }];
+
+    
+    [alert addAction:firstAction];
+    [alert addAction:secondAction];
+    [alert addAction:thirdAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+  
 }
 
 

@@ -14,6 +14,8 @@
 #import "MMDrawerController.h"
 #import "UIViewController+MMDrawerController.h"
 #import "AFNetworking.h"
+#import <UITextView+Placeholder/UITextView+Placeholder.h>
+
 
 
 @interface UploadYourRecipeViewController ()
@@ -63,6 +65,8 @@
     userid=[AppDelegate sharedInstance].userId;
     
     pickerCategory= @[@"punjabi", @"chinese", @"south Indian", @"gujarati", @"baked"];
+    _txtRecipeDiscription.placeholder=@"Recipe description";
+    
 // [_sliderTime addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];//    AddIngredientViewController *objaddIngredient =[[AddIngredientViewController alloc]init];
 //    objaddIngredient.delegate=self;
     
@@ -413,7 +417,18 @@
 
 #pragma mark UIcontrols Init and data fetching
 
+#pragma mark UITextView delegate method
+//Keyboard should resign on pressed return key
 
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    
+    if ([text isEqual:@"\n"]) {
+        [self.view endEditing:true];
+        return NO;
+    }
+    
+    return  true;
+}
 
 //-(NSString*)isBonveg{
 //    if (_segmentVegNonVeg.selectedSegmentIndex==0) {

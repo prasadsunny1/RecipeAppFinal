@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '65819985FEFA21A60FDD983F6E5E9B9B'
-               BlueprintName = 'Pods-LoginModule'
+               BlueprintIdentifier = '5086949F2DC6AB8E786A84587B60F47B'
+               BlueprintName = 'UITextView+Placeholder'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'libPods-LoginModule.a'>
+               BuildableName = 'libUITextView+Placeholder.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

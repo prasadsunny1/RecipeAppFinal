@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "AddIngredientViewController.h"
 
-@interface UploadYourRecipeViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate>
+@interface UploadYourRecipeViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource,UITextFieldDelegate,UITextViewDelegate>
 
 
 @property (weak, nonatomic) IBOutlet UIImageView *imgCoverImage;

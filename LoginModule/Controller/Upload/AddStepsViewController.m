@@ -8,6 +8,8 @@
 
 #import "AddStepsViewController.h"
 #import <MBProgressHUD.h>
+#import <UITextView+Placeholder/UITextView+Placeholder.h>
+
 @interface AddStepsViewController ()
 {
     NSMutableArray *arrMutSteps;
@@ -44,6 +46,8 @@
     
     
     // Do any additional setup after loading the view.
+    
+    _txtStepDescription.placeholder=@"Step Description";
 }
 
 - (void)didReceiveMemoryWarning {
@@ -60,6 +64,18 @@
     // Pass the selected object to the new view controller.
 }
 */
+#pragma mark delegate for textView
+
+-(BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text{
+    
+    if ([text isEqual:@"\n"]) {
+        [self.view endEditing:true];
+        return NO;
+    }
+    
+    return  true;
+}
+
 #pragma mark -UIimagePikerViewDelegate-
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)image editingInfo:(nullable NSDictionary<NSString *,id> *)editingInfo {

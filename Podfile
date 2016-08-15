@@ -13,5 +13,7 @@ target 'LoginModule' do
  pod 'BEMCheckBox'
  pod 'AMKSlidingTableViewCell', '~> 1.0'
  pod 'FBSDKShareKit', '~> 4.14'
+ pod 'UITextView+Placeholder'
+
 end
     

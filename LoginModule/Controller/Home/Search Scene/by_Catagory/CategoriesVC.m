@@ -188,9 +188,8 @@
     if(!(a%2==0))
     {
       
-        sender.backgroundColor = [UIColor greenColor];
-        sender.imageView.layer.backgroundColor = [UIColor greenColor].CGColor;
-        sender.imageView.layer.masksToBounds=YES;
+        sender.backgroundColor = [UIColor colorWithRed:(0.0/255.0) green:(100.0/255.0) blue:(0.0/255.0) alpha:1.0];
+       
     }
     else
     {

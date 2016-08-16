@@ -287,7 +287,7 @@
 
 - (IBAction)btnDone:(UIButton *)sender {
     
-   
+   BOOL ans= false;
       _a = [NSSet new];
     
     NSMutableArray *searchResult = [NSMutableArray array];
@@ -320,12 +320,14 @@
                 if ([[filter lowercaseString] isEqualToString:[result[@"ingredient"][ingname[@"recipeing"]]lowercaseString]])
                 {
                    
+                     ans = true;
                     [f addObject:[filter lowercaseString]];
                    _a =  [_a setByAddingObject:data];
                 }
             }
         }
     }
+    
     
     
     NSMutableArray *arrOfIngResult = [NSMutableArray array];
@@ -341,6 +343,11 @@
     NSMutableArray *arrF = [NSMutableArray array];
     for (NSMutableString *ofF in setOfF) {
         [arrF addObject:ofF];
+    }
+    
+    if (ans == false) {
+        
+        [arrOfIngResult addObject:[_arrDailyRecipes firstObject]];
     }
     
    IngredientResultVC *objIngVc = [self.storyboard instantiateViewControllerWithIdentifier:@"IngredientResultVC"];

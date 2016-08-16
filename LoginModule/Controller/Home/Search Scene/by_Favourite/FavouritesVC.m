@@ -23,7 +23,7 @@
 
     // defining collection view data with help of method declared in recipe.m
     
-    _cvData = [NSMutableArray arrayWithObjects:[[Recipe alloc]initwithtimeImage:@"alarm3" andTimeMins:@"20 Mins" andTimeColor:[UIColor colorWithRed:0.5647 green:0.9333 blue:0.5647 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm7" andTimeMins:@"30 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 1.0 blue:0.0 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm8" andTimeMins:@"45 Mins" andTimeColor: [UIColor colorWithRed:0.6784 green: 0.8471 blue:0.9020 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm6" andTimeMins:@"60 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 0.4118 blue:0.7059 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm4" andTimeMins:@"90 Mins" andTimeColor: [UIColor colorWithRed:1.0 green: 0.2706 blue:0.0 alpha:1.0f]], nil];
+    _cvData = [NSMutableArray arrayWithObjects:[[Recipe alloc]initwithtimeImage:@"alarm10" andTimeMins:@"10" andTimeColor:[UIColor colorWithRed:0.0 green:0.0 blue:0.502 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm3" andTimeMins:@"20" andTimeColor:[UIColor colorWithRed:0.5647 green:0.9333 blue:0.5647 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm7" andTimeMins:@"30" andTimeColor: [UIColor colorWithRed:1.0 green: 1.0 blue:0.0 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm8" andTimeMins:@"45" andTimeColor: [UIColor colorWithRed:0.6784 green: 0.8471 blue:0.9020 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm6" andTimeMins:@"60" andTimeColor: [UIColor colorWithRed:1.0 green: 0.4118 blue:0.7059 alpha:1.0f]],[[Recipe alloc]initwithtimeImage:@"alarm4" andTimeMins:@"90" andTimeColor: [UIColor colorWithRed:1.0 green: 0.2706 blue:0.0 alpha:1.0f]], nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -57,7 +57,7 @@
     cell.lblFavName.text = recipe.timeMins;
     cell.lblFavName.textColor = recipe.timeColor ;
     cell.lblIhavegot.textColor = recipe.timeColor;
-    
+    cell.lblMinutes.textColor = recipe.timeColor;
     
     return cell;
 }
@@ -72,7 +72,7 @@
     
     SearchVCTableViewController *objVC = [self.storyboard instantiateViewControllerWithIdentifier:@"SearchVCTableViewController"];
     objVC.recipeType = 3;
-    objVC.strTime = recipe.timeMins.lowercaseString;
+    objVC.strTime = recipe.timeMins;
     NSLog(@"time %@",recipe.timeMins.lowercaseString);
     objVC.strNavTitle = @"Time";
     [self.navigationController pushViewController:objVC animated:YES];

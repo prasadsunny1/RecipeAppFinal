@@ -242,23 +242,11 @@
 
 }
 
-- (IBAction)btnShare:(UIButton *)sender {
+- (IBAction)btnShare:(UIButton *)sender
+{
 
-   
-    
-    a++;
-    if(a%2==0)
-    {
-        
-        _isOn = NO;
-        [_shareProp setImage:[UIImage imageNamed:@"sharesadded.png"] forState:UIControlStateNormal];
-       
-    }
-    else
-    {
-        _isOn = YES;
-        [_shareProp setImage:[UIImage imageNamed:@"shares.png"] forState:UIControlStateNormal];
-    }
+   [_shareProp setImage:[UIImage imageNamed:@"shares.png"] forState:UIControlStateNormal];
+
     
     
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Share" message:@"Select Your Choice" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -272,6 +260,8 @@
             
             [controller addURL:[NSURL URLWithString:@"https://github.com/prasadsunny1/RecipeAppFinal"]];
             [controller setInitialText:[NSString stringWithFormat:@"Hey! Check out this new exciting recipe %@",[_result valueForKey:@"name"]]];
+            UIPasteboard *pasteboard = [UIPasteboard generalPasteboard];
+            pasteboard.string = [NSString stringWithFormat:@"%@",[_result valueForKey:@"name"]];
             [controller addImage:_RecipeDisplayCoverPhoto.image];
             [self presentViewController:controller animated:YES completion:Nil];
         }

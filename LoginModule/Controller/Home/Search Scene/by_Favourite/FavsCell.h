@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgOfFavs;
 @property (strong, nonatomic) IBOutlet UILabel *lblFavName;
 @property (strong, nonatomic) IBOutlet UILabel *lblIhavegot;
+@property (strong, nonatomic) IBOutlet UILabel *lblMinutes;
 
 @end

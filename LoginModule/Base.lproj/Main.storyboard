@@ -1427,17 +1427,17 @@
         <scene sceneID="NLZ-k9-JE4">
             <objects>
                 <tableViewController storyboardIdentifier="SearchVCTableViewController" title="searchByAllRecipe" id="Nd3-6E-O2X" customClass="SearchVCTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" id="LB4-Oc-Png">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="147" sectionHeaderHeight="28" sectionFooterHeight="28" id="LB4-Oc-Png">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <searchBar key="tableHeaderView" contentMode="redraw" id="fRu-bs-hor">
                             <rect key="frame" x="0.0" y="64" width="320" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" red="0.96862745100000003" green="0.25882352939999997" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
-                            <color key="tintColor" red="0.96862745100000003" green="0.25882352939999997" blue="0.15686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.58039215690000001" green="0.015686274510000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="tintColor" red="0.58039215690000001" green="0.015686274510000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                             <color key="barTintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="yes" spellCheckingType="yes"/>
                         </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SearchAllRecipesTableViewCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SearchAllRecipesTableViewCell" rowHeight="147" id="Xhz-Nr-Dtk" customClass="SearchAllRecipesTableViewCell">
@@ -1447,9 +1447,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-YH-2I0">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="146"/>
-                                        </imageView>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-Ss-yvh">
                                             <rect key="frame" x="153" y="0.0" width="141" height="146"/>
                                             <subviews>
@@ -1483,6 +1480,9 @@
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vW1-hd-Bvd">
                                             <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-YH-2I0">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="146"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -1586,13 +1586,6 @@
                                                     <action selector="btnDone:" destination="RAs-WK-hbi" eventType="touchUpInside" id="bub-oa-nVC"/>
                                                 </connections>
                                             </button>
-                                            <searchBar contentMode="redraw" placeholder="Seperat Your Ingredients By Comma" translatesAutoresizingMaskIntoConstraints="NO" id="It7-CL-LFV">
-                                                <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
-                                                <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="tintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <color key="barTintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </searchBar>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-l5-efC">
                                                 <rect key="frame" x="0.0" y="90" width="320" height="366"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1635,6 +1628,13 @@
                                                     <outlet property="delegate" destination="RAs-WK-hbi" id="4DE-AA-FjB"/>
                                                 </connections>
                                             </collectionView>
+                                            <searchBar contentMode="redraw" placeholder="Seperat Your Ingredients By Comma" translatesAutoresizingMaskIntoConstraints="NO" id="It7-CL-LFV">
+                                                <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
+                                                <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="tintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="barTintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                            </searchBar>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -1882,7 +1882,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9e1-mx-9eS">
-                                                    <rect key="frame" x="8" y="393" width="304" height="43"/>
+                                                    <rect key="frame" x="106" y="393" width="43" height="43"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="Cochin-BoldItalic" family="Cochin" pointSize="27"/>
                                                     <color key="textColor" red="0.58039215690000001" green="0.015686274510000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
@@ -1899,6 +1899,13 @@
                                                     <color key="textColor" red="0.58039215690000001" green="0.015686274510000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Minutes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gpd-Mx-Zqa">
+                                                    <rect key="frame" x="157" y="392" width="128" height="43"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="Cochin-BoldItalic" family="Cochin" pointSize="27"/>
+                                                    <color key="textColor" red="0.58039215690000001" green="0.015686274510000001" blue="0.1019607843" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -1906,6 +1913,7 @@
                                             <outlet property="imgOfFavs" destination="w7N-9M-Hk7" id="A3b-um-efD"/>
                                             <outlet property="lblFavName" destination="9e1-mx-9eS" id="sKm-i6-ccB"/>
                                             <outlet property="lblIhavegot" destination="vwe-04-Yor" id="k79-8x-xF5"/>
+                                            <outlet property="lblMinutes" destination="Gpd-Mx-Zqa" id="7SZ-rF-h70"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -2029,21 +2037,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-Ti-wb9">
-                                                    <rect key="frame" x="8" y="49" width="102" height="30"/>
-                                                    <color key="backgroundColor" red="0.62401493439887001" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <fontDescription key="fontDescription" name="Cochin-BoldItalic" family="Cochin" pointSize="18"/>
-                                                    <state key="normal" title="      Favourite">
-                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </state>
-                                                    <connections>
-                                                        <action selector="btnCategoriesFav:" destination="rWh-2v-ANd" eventType="touchUpInside" id="gf5-qn-BFE"/>
-                                                    </connections>
-                                                </button>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Favourites" translatesAutoresizingMaskIntoConstraints="NO" id="j9m-Op-4mH">
-                                                    <rect key="frame" x="8" y="49" width="27" height="30"/>
-                                                    <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
-                                                </imageView>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gFa-pa-9Lc">
                                                     <rect key="frame" x="8" y="89" width="102" height="30"/>
                                                     <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -2074,6 +2067,17 @@
                                                     <rect key="frame" x="8" y="8" width="27" height="30"/>
                                                     <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyx-Ti-wb9">
+                                                    <rect key="frame" x="8" y="47" width="102" height="30"/>
+                                                    <color key="backgroundColor" red="0.62401493439887001" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="Cochin-BoldItalic" family="Cochin" pointSize="21"/>
+                                                    <state key="normal" title=" Favourite">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="btnCategoriesFav:" destination="rWh-2v-ANd" eventType="touchUpInside" id="gf5-qn-BFE"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -2220,23 +2224,20 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-dp-9Ha">
-                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
-                                                </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-hW-SVD">
                                                     <rect key="frame" x="147" y="0.0" width="140" height="146"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="cookingtimehome" translatesAutoresizingMaskIntoConstraints="NO" id="9kt-gM-Fik">
-                                                            <rect key="frame" x="10" y="67" width="20" height="20"/>
+                                                            <rect key="frame" x="8" y="51" width="20" height="20"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbH-zr-C3Z">
-                                                            <rect key="frame" x="38" y="60" width="102" height="33"/>
+                                                            <rect key="frame" x="38" y="51" width="102" height="33"/>
                                                             <fontDescription key="fontDescription" name="Cochin-Italic" family="Cochin" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lAZ-YO-eve">
-                                                            <rect key="frame" x="38" y="101" width="102" height="33"/>
+                                                            <rect key="frame" x="38" y="89" width="102" height="33"/>
                                                             <fontDescription key="fontDescription" name="Cochin-Italic" family="Cochin" pointSize="17"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                             <nil key="highlightedColor"/>
@@ -2248,13 +2249,16 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView userInteractionEnabled="NO" alpha="0.75" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="servesicon 02-25-31-693 02-35-30-577" translatesAutoresizingMaskIntoConstraints="NO" id="eeq-Xc-P96">
-                                                            <rect key="frame" x="10" y="108" width="20" height="20"/>
+                                                            <rect key="frame" x="10" y="96" width="20" height="20"/>
                                                         </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.60000002379999995" green="0.40000000600000002" blue="0.20000000300000001" alpha="0.66241918099999997" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBk-AI-D8h">
                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-dp-9Ha">
+                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>
@@ -2403,7 +2407,6 @@
         <image name="CategorieRegion" width="170" height="170"/>
         <image name="CategoriesIcon" width="27" height="27"/>
         <image name="Facebook" width="120" height="120"/>
-        <image name="Favourites" width="27" height="29"/>
         <image name="Google+" width="96" height="96"/>
         <image name="SearchIcon" width="30" height="30"/>
         <image name="addicon" width="64" height="64"/>

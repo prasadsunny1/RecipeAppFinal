@@ -11,7 +11,12 @@
 #import "AppDelegate.h"
 #import "UIKit+AFNetworking.h"
 
+
 @interface HomeVC ()
+{
+    CGFloat w;
+    NSTimer *autoScrollTimer;
+}
 
 @end
 
@@ -40,7 +45,7 @@
         
     }
     
- 
+   w = 0.0;
 
 }
 
@@ -87,7 +92,51 @@
     }
 }
 
-//
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    
+    [self configAutoscrollTimer];
+}
+
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    [self deconfigAutoscrollTimer];
+}
+
+- (void)configAutoscrollTimer {
+    autoScrollTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(onTimer) userInfo:nil repeats:YES];
+}
+
+- (void)deconfigAutoscrollTimer {
+    [autoScrollTimer invalidate];
+    autoScrollTimer = nil;
+}
+
+- (void)onTimer {
+    [self autoScrollView];
+}
+
+- (void)autoScrollView {
+    CGPoint initailPoint = CGPointMake(w, 0);
+    
+    if (CGPointEqualToPoint(initailPoint, self.homeTopRatedRecipeCV.contentOffset)) {
+        
+        if (w < self.homeTopRatedRecipeCV.contentSize.width) {
+            w += 0.5;
+        }
+        else {
+            w = -self.view.frame.size.width;
+        }
+        
+        CGPoint offsetPoint = CGPointMake(w, 0);
+        self.homeTopRatedRecipeCV.contentOffset = offsetPoint;
+        
+    }
+    else {
+        w = self.homeTopRatedRecipeCV.contentOffset.x;
+    }
+}
 #pragma mark - collection view datasource 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{

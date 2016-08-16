@@ -116,7 +116,7 @@
 - (void)onTimer {
     [self autoScrollView];
 }
-
+//
 - (void)autoScrollView {
     CGPoint initailPoint = CGPointMake(w, 0);
     

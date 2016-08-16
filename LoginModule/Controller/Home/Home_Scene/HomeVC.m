@@ -72,7 +72,7 @@
                 _arrDailyRecipes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 dispatch_async(dispatch_get_main_queue(), ^{
                           [_homeTopRatedRecipeCV reloadData];
-                         [self autoScroll];
+//                         [self autoScroll];
                 });
              
             }

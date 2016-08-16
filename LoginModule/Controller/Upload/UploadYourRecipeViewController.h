@@ -33,6 +33,7 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *btnUpload;
 
+@property (weak, nonatomic) IBOutlet UITextField *txtFlocation;
 
 
 

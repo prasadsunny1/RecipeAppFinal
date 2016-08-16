@@ -131,9 +131,6 @@
                                                 </subviews>
                                                 <color key="backgroundColor" red="0.51631064063556453" green="0.04410021551724138" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="appimage" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-JQ-iyU">
-                                                <rect key="frame" x="122" y="8" width="76" height="76"/>
-                                            </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9cV-ka-rlz">
                                                 <rect key="frame" x="194" y="333" width="64" height="64"/>
                                                 <state key="normal" image="Google+"/>
@@ -141,6 +138,9 @@
                                                     <action selector="btnGoogleLoginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jy2-D4-kRc"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Recipe_logoo" translatesAutoresizingMaskIntoConstraints="NO" id="qcJ-JQ-iyU">
+                                                <rect key="frame" x="122" y="8" width="76" height="76"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.62352941176470589" green="0.027450980392156862" blue="0.070588235294117646" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
@@ -861,14 +861,13 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aoC-Dx-nnK">
                                                 <rect key="frame" x="7" y="351" width="305" height="37"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oDh-tC-l1I">
-                                                        <rect key="frame" x="22" y="8" width="71" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LO3-yG-3hn">
-                                                        <rect key="frame" x="119" y="4" width="178" height="30"/>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FkJ-oe-ciX">
+                                                        <rect key="frame" x="8" y="4" width="141" height="30"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Category" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LO3-yG-3hn">
+                                                        <rect key="frame" x="157" y="4" width="140" height="30"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
@@ -890,13 +889,6 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UgT-DK-iD5">
                                         <rect key="frame" x="-2" y="292" width="324" height="212"/>
                                         <subviews>
-                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRS-0t-dep">
-                                                <rect key="frame" x="0.0" y="55" width="324" height="157"/>
-                                                <connections>
-                                                    <outlet property="dataSource" destination="vz8-yf-bwW" id="kfH-Qf-Sro"/>
-                                                    <outlet property="delegate" destination="vz8-yf-bwW" id="Bfz-kQ-W8O"/>
-                                                </connections>
-                                            </pickerView>
                                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u7O-Wc-74w">
                                                 <rect key="frame" x="8" y="0.0" width="324" height="44"/>
                                                 <items>
@@ -923,6 +915,52 @@
                                                     </barButtonItem>
                                                 </items>
                                             </toolbar>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vRS-0t-dep">
+                                                <rect key="frame" x="0.0" y="55" width="324" height="157"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vz8-yf-bwW" id="kfH-Qf-Sro"/>
+                                                    <outlet property="delegate" destination="vz8-yf-bwW" id="Bfz-kQ-W8O"/>
+                                                </connections>
+                                            </pickerView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GcF-nc-M1f" userLabel="pickerForLocation">
+                                        <rect key="frame" x="0.0" y="146" width="320" height="212"/>
+                                        <subviews>
+                                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f2d-pm-7i2">
+                                                <rect key="frame" x="6" y="0.0" width="324" height="44"/>
+                                                <items>
+                                                    <barButtonItem style="plain" id="itm-1t-vZ2">
+                                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="uT1-cg-J07">
+                                                            <rect key="frame" x="16" y="7" width="48" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Cancel"/>
+                                                            <connections>
+                                                                <action selector="cancelOnLocation:" destination="vz8-yf-bwW" eventType="touchUpInside" id="jNl-eX-5qX"/>
+                                                            </connections>
+                                                        </button>
+                                                    </barButtonItem>
+                                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="ljL-i0-rP0"/>
+                                                    <barButtonItem style="plain" id="z93-Wj-oCJ">
+                                                        <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="17G-Mc-DOu">
+                                                            <rect key="frame" x="271" y="7" width="37" height="30"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <state key="normal" title="Done"/>
+                                                            <connections>
+                                                                <action selector="DoneOnLocation:" destination="vz8-yf-bwW" eventType="touchUpInside" id="Vf0-lO-5O2"/>
+                                                            </connections>
+                                                        </button>
+                                                    </barButtonItem>
+                                                </items>
+                                            </toolbar>
+                                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wO4-bg-CcN">
+                                                <rect key="frame" x="-2" y="55" width="324" height="157"/>
+                                                <connections>
+                                                    <outlet property="dataSource" destination="vz8-yf-bwW" id="Wj8-9N-Ggd"/>
+                                                    <outlet property="delegate" destination="vz8-yf-bwW" id="9mf-Q7-BZo"/>
+                                                </connections>
+                                            </pickerView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
@@ -942,13 +980,16 @@
                         <outlet property="imgCoverImage" destination="ugy-Ub-jTX" id="oIZ-Lh-wOI"/>
                         <outlet property="lblServes" destination="1Qx-NY-gFF" id="VUr-AK-2zk"/>
                         <outlet property="lblTime" destination="xAf-7d-deK" id="PQY-cD-5LZ"/>
+                        <outlet property="pickerLocation" destination="wO4-bg-CcN" id="E28-G3-7Cy"/>
                         <outlet property="segmentVegNonVeg" destination="aPY-e7-hA5" id="pEt-Gt-Jl9"/>
                         <outlet property="sliderServes" destination="Xr6-gQ-7Md" id="Z9B-nM-SlB"/>
                         <outlet property="sliderTime" destination="PY5-Te-GIl" id="XHj-T4-nTv"/>
                         <outlet property="txtFCategory" destination="LO3-yG-3hn" id="CkT-ff-Qfg"/>
                         <outlet property="txtFRecipeName" destination="cwB-JW-YJo" id="faG-Sp-EA1"/>
+                        <outlet property="txtFlocation" destination="FkJ-oe-ciX" id="lmy-eN-aYI"/>
                         <outlet property="txtRecipeDiscription" destination="t7L-Ir-KDr" id="UOT-fJ-plJ"/>
                         <outlet property="uiPickerOutlet" destination="vRS-0t-dep" id="lsa-Hg-SV9"/>
+                        <outlet property="viewForLocation" destination="GcF-nc-M1f" id="O7y-qB-4mh"/>
                         <outlet property="vieww" destination="UgT-DK-iD5" id="iMH-WF-GUm"/>
                     </connections>
                 </viewController>
@@ -1545,23 +1586,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-dT-Fzj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zR2-dT-Fzj">
                                 <rect key="frame" x="40" y="220" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-l7-2Lr" customClass="TPKeyboardAvoidingScrollView">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4E-l7-2Lr" customClass="TPKeyboardAvoidingScrollView">
                                 <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-94-TqY">
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XAx-94-TqY">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Search With Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-3f-dy7">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search With Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpK-3f-dy7">
                                                 <rect key="frame" x="51" y="50" width="124" height="32"/>
                                                 <fontDescription key="fontDescription" name="Cochin-BoldItalic" family="Cochin" pointSize="15"/>
                                                 <color key="textColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </label>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yoK-l6-c4c" customClass="BEMCheckBox">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoK-l6-c4c" customClass="BEMCheckBox">
                                                 <rect key="frame" x="10" y="50" width="33" height="32"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <userDefinedRuntimeAttributes>
@@ -1579,7 +1620,7 @@
                                                     <outlet property="delegate" destination="RAs-WK-hbi" id="NAG-kv-zvh"/>
                                                 </connections>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-Pm-QRQ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DIp-Pm-QRQ">
                                                 <rect key="frame" x="274" y="0.0" width="46" height="44"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Cochin-Italic" family="Cochin" pointSize="23"/>
@@ -1592,7 +1633,7 @@
                                                     <action selector="btnDone:" destination="RAs-WK-hbi" eventType="touchUpInside" id="bub-oa-nVC"/>
                                                 </connections>
                                             </button>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-l5-efC">
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="kLG-l5-efC">
                                                 <rect key="frame" x="0.0" y="90" width="320" height="366"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fww-6J-yGe">
@@ -1634,7 +1675,7 @@
                                                     <outlet property="delegate" destination="RAs-WK-hbi" id="4DE-AA-FjB"/>
                                                 </connections>
                                             </collectionView>
-                                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Seperat Your Ingredients By Comma" translatesAutoresizingMaskIntoConstraints="NO" id="It7-CL-LFV">
+                                            <searchBar contentMode="redraw" placeholder="Seperat Your Ingredients By Comma" translatesAutoresizingMaskIntoConstraints="NO" id="It7-CL-LFV">
                                                 <rect key="frame" x="0.0" y="0.0" width="274" height="44"/>
                                                 <color key="backgroundColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.62352941179999999" green="0.027450980390000001" blue="0.070588235289999995" alpha="1" colorSpace="calibratedRGB"/>
@@ -2402,9 +2443,9 @@
         <image name="CategoriesIcon" width="27" height="27"/>
         <image name="Facebook" width="120" height="120"/>
         <image name="Google+" width="96" height="96"/>
+        <image name="Recipe_logoo" width="400" height="400"/>
         <image name="SearchIcon" width="30" height="30"/>
         <image name="addicon" width="64" height="64"/>
-        <image name="appimage" width="353" height="442"/>
         <image name="back1" width="24" height="24"/>
         <image name="cancle" width="42" height="42"/>
         <image name="casserolforcookingtime" width="170" height="170"/>

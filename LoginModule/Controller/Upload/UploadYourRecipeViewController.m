@@ -31,6 +31,7 @@
     NSMutableDictionary *dictIngredientstosend;
     NSMutableDictionary *dictIngredientQuantityToSend;
     NSArray *pickerCategory;
+     NSArray *pickerLocation;
     NSMutableString *strRecipeCategory;
     NSString *user,*userid;
 
@@ -38,6 +39,11 @@
 }
 @property (strong, nonatomic) IBOutlet UIPickerView *uiPickerOutlet;
 @property (strong, nonatomic) IBOutlet UIView *vieww;
+
+@property (weak, nonatomic) IBOutlet UIPickerView *uiPickerLocation;
+
+@property (weak, nonatomic) IBOutlet UIView *viewForLocation;
+
 
 @property (strong, nonatomic) IBOutlet UITextField *txtFCategory;
 
@@ -65,6 +71,7 @@
     userid=[AppDelegate sharedInstance].userId;
     
     pickerCategory= @[@"punjabi", @"chinese", @"south Indian", @"gujarati", @"baked"];
+     pickerLocation= @[@"Gujarat", @"Maharastra", @"Rajasthan", @"Punjab", @"Haryana"];
     _txtRecipeDiscription.placeholder=@"Recipe description";
     
 // [_sliderTime addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];//    AddIngredientViewController *objaddIngredient =[[AddIngredientViewController alloc]init];
@@ -74,6 +81,8 @@
     
     [_vieww removeFromSuperview];
     _txtFCategory.inputView=_vieww;
+    [_viewForLocation removeFromSuperview];
+    _txtFlocation.inputView=_viewForLocation;
     // Do any additional setup after loading the view.
 }
 
@@ -214,7 +223,7 @@
                                   @"steps": dictStepToSend,
                                   @"location": @"india",
                                   @"name":arrCopyOfAllRecipeData[0][@"name"],
-                                  @"category" :arrCopyOfAllRecipeData[0][@"category"],
+                                  @"category" :[arrCopyOfAllRecipeData[0][@"category"] lowercaseString],
                                   @"userid":userid};
     
     NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
@@ -237,7 +246,15 @@
                                                         
                                                         NSArray *aArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                                                         NSLog(@" Dict : %@",aArray);
+                                                        NSLog(@"Upload success");
+                                                        
+                                                         {
+                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                          [[AppDelegate sharedInstance] showAlertInController:self WithMessage:@"Upload success"];
 
+                                                      });
+                                                  }
+                                                  
                                                     }
                                                 }];
     [dataTask resume];
@@ -408,11 +425,22 @@
 
 #pragma mark picker's methods
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [pickerCategory count];
+    if (pickerView == _uiPickerLocation) {
+        return [pickerLocation count];
+    }
+    else  {
+return [pickerCategory count];
+    }
+    return NSNotFound;
 }
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    
-    return pickerCategory[row];
+    if (pickerView == _uiPickerLocation) {
+        return pickerLocation[row];
+    }
+    else  {
+ return pickerCategory[row];    }
+
+   
 }
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 1;
@@ -428,6 +456,21 @@
     [_txtFCategory endEditing:true];
     
 }
+
+//location Picker
+
+- (IBAction)cancelOnLocation:(UIButton *)sender {
+    [self.view endEditing:true];
+
+}
+
+
+- (IBAction)DoneOnLocation:(UIButton *)sender {
+    NSLog(@"selected element %ld",(long)[_uiPickerLocation selectedRowInComponent:0]);
+    _txtFlocation.text=pickerLocation[[_uiPickerLocation selectedRowInComponent:0]];
+    [_txtFlocation endEditing:true];
+}
+
 
 #pragma mark UIcontrols Init and data fetching
 

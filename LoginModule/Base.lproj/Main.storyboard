@@ -1447,6 +1447,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-YH-2I0">
+                                            <rect key="frame" x="0.0" y="0.0" width="294" height="146"/>
+                                        </imageView>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b1L-Ss-yvh">
                                             <rect key="frame" x="153" y="0.0" width="141" height="146"/>
                                             <subviews>
@@ -1480,9 +1483,6 @@
                                         </view>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vW1-hd-Bvd">
                                             <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
-                                        </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a5D-YH-2I0">
-                                            <rect key="frame" x="0.0" y="0.0" width="294" height="146"/>
                                         </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
@@ -2224,6 +2224,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-dp-9Ha">
+                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
+                                                </imageView>
                                                 <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ibi-hW-SVD">
                                                     <rect key="frame" x="147" y="0.0" width="140" height="146"/>
                                                     <subviews>
@@ -2256,9 +2259,6 @@
                                                 </view>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KBk-AI-D8h">
                                                     <rect key="frame" x="0.0" y="0.0" width="26" height="26"/>
-                                                </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VcH-dp-9Ha">
-                                                    <rect key="frame" x="0.0" y="0.0" width="287" height="146"/>
                                                 </imageView>
                                             </subviews>
                                         </tableViewCellContentView>

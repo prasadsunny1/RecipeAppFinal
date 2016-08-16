@@ -130,7 +130,7 @@
 		A957DC381D4A238200CFCE29 /* TPKeyboardAvoidingTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TPKeyboardAvoidingTableView.m; sourceTree = "<group>"; };
 		A957DC391D4A238200CFCE29 /* UIScrollView+TPKeyboardAvoidingAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+TPKeyboardAvoidingAdditions.h"; sourceTree = "<group>"; };
 		A957DC3A1D4A238200CFCE29 /* UIScrollView+TPKeyboardAvoidingAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+TPKeyboardAvoidingAdditions.m"; sourceTree = "<group>"; };
-		A96BBC561D2FE9BF00BF70EC /* LoginModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoginModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A96BBC561D2FE9BF00BF70EC /* Recipe App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Recipe App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A96BBC5A1D2FE9BF00BF70EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A96BBC631D2FE9BF00BF70EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A96BBC651D2FE9BF00BF70EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -404,7 +404,7 @@
 		A96BBC571D2FE9BF00BF70EC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A96BBC561D2FE9BF00BF70EC /* LoginModule.app */,
+				A96BBC561D2FE9BF00BF70EC /* Recipe App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -655,9 +655,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A96BBC551D2FE9BF00BF70EC /* LoginModule */ = {
+		A96BBC551D2FE9BF00BF70EC /* Recipe App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A96BBC6D1D2FE9BF00BF70EC /* Build configuration list for PBXNativeTarget "LoginModule" */;
+			buildConfigurationList = A96BBC6D1D2FE9BF00BF70EC /* Build configuration list for PBXNativeTarget "Recipe App" */;
 			buildPhases = (
 				5606C4B3789026CB59A8BB67 /* [CP] Check Pods Manifest.lock */,
 				A96BBC521D2FE9BF00BF70EC /* Sources */,
@@ -670,9 +670,9 @@
 			);
 			dependencies = (
 			);
-			name = LoginModule;
+			name = "Recipe App";
 			productName = LoginModule;
-			productReference = A96BBC561D2FE9BF00BF70EC /* LoginModule.app */;
+			productReference = A96BBC561D2FE9BF00BF70EC /* Recipe App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -690,7 +690,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A96BBC511D2FE9BF00BF70EC /* Build configuration list for PBXProject "LoginModule" */;
+			buildConfigurationList = A96BBC511D2FE9BF00BF70EC /* Build configuration list for PBXProject "Recipe" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -703,7 +703,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A96BBC551D2FE9BF00BF70EC /* LoginModule */,
+				A96BBC551D2FE9BF00BF70EC /* Recipe App */,
 			);
 		};
 /* End PBXProject section */
@@ -988,7 +988,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A96BBC511D2FE9BF00BF70EC /* Build configuration list for PBXProject "LoginModule" */ = {
+		A96BBC511D2FE9BF00BF70EC /* Build configuration list for PBXProject "Recipe" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A96BBC6B1D2FE9BF00BF70EC /* Debug */,
@@ -997,7 +997,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A96BBC6D1D2FE9BF00BF70EC /* Build configuration list for PBXNativeTarget "LoginModule" */ = {
+		A96BBC6D1D2FE9BF00BF70EC /* Build configuration list for PBXNativeTarget "Recipe App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A96BBC6E1D2FE9BF00BF70EC /* Debug */,

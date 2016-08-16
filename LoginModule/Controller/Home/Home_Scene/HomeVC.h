@@ -15,8 +15,9 @@
 
 @interface HomeVC : UIViewController <UICollectionViewDataSource,UICollectionViewDelegate>
 
-@property (strong, nonatomic) IBOutlet UICollectionView *homeTopRatedRecipeCV;
-@property (strong, nonatomic) NSMutableArray* arrDailyRecipes;
+@property (strong, nonatomic) IBOutlet __block UICollectionView *homeTopRatedRecipeCV;
+@property (strong, nonatomic) __block NSMutableArray* arrDailyRecipes;
 - (IBAction)onDrawer:(UIBarButtonItem *)sender;
-
+- (IBAction)btnOnBack:(UIBarButtonItem *)sender;
+@property (strong, nonatomic) NSString *isBackOn;
 @end

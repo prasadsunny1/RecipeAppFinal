@@ -202,6 +202,7 @@
 - (IBAction)btnCategoriesPopular:(UIButton *)sender {
     
     HomeVC *objVC = [self.storyboard instantiateViewControllerWithIdentifier:@"HomeVC"];
+    objVC.isBackOn = @"Yes";
     [self.navigationController pushViewController:objVC animated:YES];
     
 }

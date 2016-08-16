@@ -27,6 +27,21 @@
     
     //calling web services
     [self getAllRecipe];
+    
+    //checking if back is on
+    if ([_isBackOn isEqualToString:@"Yes"])
+    {
+        self.navigationItem.hidesBackButton = YES;
+        
+    }
+    else
+    {
+        self.navigationItem.leftBarButtonItems = nil;
+        
+    }
+    
+ 
+
 }
 
 -(void)getAllRecipe{
@@ -57,8 +72,9 @@
                 _arrDailyRecipes = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
                 dispatch_async(dispatch_get_main_queue(), ^{
                           [_homeTopRatedRecipeCV reloadData];
+                         [self autoScroll];
                 });
-          
+             
             }
         }];
         [dataTask resume];
@@ -130,6 +146,36 @@
 
 }
 
+
+- (void) autoScroll
+{
+    __block int i;
+    void (^anewBlock)(void)=^(void)
+    {
+     for(i=0;i<_arrDailyRecipes.count;i++)
+     {
+         dispatch_async(dispatch_get_main_queue(), ^{
+             [UICollectionView beginAnimations:@"scrollAnimation" context:nil];
+        [UICollectionView setAnimationDuration:30.0f];
+        [_homeTopRatedRecipeCV setContentOffset:CGPointMake(_homeTopRatedRecipeCV.frame.size.width*i, 0)];
+        [UICollectionView commitAnimations];
+        if (i == _arrDailyRecipes.count -1)
+        {
+            i=0;
+        }
+         });
+        
+        
+        
+     }
+        
+    };
+    anewBlock();
+
+    
+}
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -139,5 +185,10 @@
 - (IBAction)onDrawer:(UIBarButtonItem *)sender
 {
     [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
+}
+
+- (IBAction)btnOnBack:(UIBarButtonItem *)sender
+{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 @end

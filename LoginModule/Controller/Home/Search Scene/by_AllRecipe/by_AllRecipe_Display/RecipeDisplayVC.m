@@ -253,7 +253,7 @@
     
     UIAlertAction *firstAction = [UIAlertAction actionWithTitle:@"Share Via Facebook" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
     {
-        if(![SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
+        if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook])
         {
             SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
             //
@@ -270,7 +270,7 @@
    
     UIAlertAction *secondAction = [UIAlertAction actionWithTitle:@"Share Via Twitter" style:UIAlertActionStyleDefault handler:^(UIAlertAction * action)
     {
-                if (![SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
+                if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter])
                 {
                     SLComposeViewController *tweetSheet = [SLComposeViewController
                                                            composeViewControllerForServiceType:SLServiceTypeTwitter];

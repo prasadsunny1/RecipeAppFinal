@@ -248,6 +248,8 @@
 
 
 -(void)uploadAllImages{
+    [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
     __block  double progress=0;
 
     NSMutableData *fileData;
@@ -304,7 +306,12 @@
                                                       [arrCopyOfAllRecipeData[0] setObject:aString forKey:@"coverimage"];
                                                       
                                                       
-                                                      
+                                                       {
+                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                      });
+                                                  }
+                                                  
                                                       //here
                                                   }
                                               }];
@@ -314,6 +321,8 @@
         }
         
         for (int i=0; i<[arrCopyOfAllRecipeData[0][@"steps"] count]; i++) {
+            [MBProgressHUD showHUDAddedTo:self.view animated:YES];
+
             
             fileData =UIImageJPEGRepresentation(arrCopyOfAllRecipeData[0][@"steps"][i][@"stepImage"], 0.8).mutableCopy;
             
@@ -362,7 +371,12 @@
 //                                                          }
 //                                                      }
 
-                                                     
+                                                      {
+                                                      dispatch_async(dispatch_get_main_queue(), ^{
+                                                          [MBProgressHUD hideHUDForView:self.view animated:YES];
+                                                      });
+                                                  }
+                                                  
                                                   }
                                               }];
             

@@ -221,7 +221,7 @@
                                   @"ingredient_quantity":dictIngredientQuantityToSend,
                                   @"video": @"link",
                                   @"steps": dictStepToSend,
-                                  @"location": @"india",
+                                  @"location": [_txtFlocation.text lowercaseString],
                                   @"name":arrCopyOfAllRecipeData[0][@"name"],
                                   @"category" :[arrCopyOfAllRecipeData[0][@"category"] lowercaseString],
                                   @"userid":userid};

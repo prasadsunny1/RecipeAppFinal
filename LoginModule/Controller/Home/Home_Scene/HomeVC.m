@@ -14,7 +14,8 @@
 
 @interface HomeVC ()
 {
-    CGFloat w;
+    CGFloat  w;
+    
     NSTimer *autoScrollTimer;
 }
 
@@ -118,15 +119,23 @@
 }
 //
 - (void)autoScrollView {
+   
+//
     CGPoint initailPoint = CGPointMake(w, 0);
+
     
     if (CGPointEqualToPoint(initailPoint, self.homeTopRatedRecipeCV.contentOffset)) {
         
-        if (w < self.homeTopRatedRecipeCV.contentSize.width) {
+        if (w < self.homeTopRatedRecipeCV.contentSize.width-320) {
+            if (w<0.0) {
+                
+                w=0.0;
+            }
+
             w += 0.5;
         }
         else {
-            w = -self.view.frame.size.width;
+            w =-self.view.frame.size.width;
         }
         
         CGPoint offsetPoint = CGPointMake(w, 0);

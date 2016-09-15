@@ -14,6 +14,7 @@
 #import "MBProgressHUD.h"
 #import "UIKit+AFNetworking.h"
 #import "Recipe.h"
+#import "RefinedSearch.h"
 
 @interface SearchByIngredientsViewController : UIViewController<UICollectionViewDelegate,UICollectionViewDataSource> {
     

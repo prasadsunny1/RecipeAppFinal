@@ -79,6 +79,7 @@
 		A9E043631D5CB2380006E297 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E0434E1D5CB2380006E297 /* UIProgressView+AFNetworking.m */; };
 		A9E043641D5CB2380006E297 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E043501D5CB2380006E297 /* UIRefreshControl+AFNetworking.m */; };
 		A9E043651D5CB2380006E297 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = A9E043521D5CB2380006E297 /* UIWebView+AFNetworking.m */; };
+		A9FA281B1D84ADD600760976 /* RefinedSearch.m in Sources */ = {isa = PBXBuildFile; fileRef = A9FA281A1D84ADD600760976 /* RefinedSearch.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -225,6 +226,8 @@
 		A9E043501D5CB2380006E297 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		A9E043511D5CB2380006E297 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		A9E043521D5CB2380006E297 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		A9FA28191D84ADD600760976 /* RefinedSearch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RefinedSearch.h; sourceTree = "<group>"; };
+		A9FA281A1D84ADD600760976 /* RefinedSearch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RefinedSearch.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -500,6 +503,8 @@
 			isa = PBXGroup;
 			children = (
 				A9E042ED1D5CAF5B0006E297 /* by_Ingredient_Display */,
+				A9FA28191D84ADD600760976 /* RefinedSearch.h */,
+				A9FA281A1D84ADD600760976 /* RefinedSearch.m */,
 			);
 			path = by_AllIngredients;
 			sourceTree = "<group>";
@@ -836,6 +841,7 @@
 				A98577C81D54E007006558E7 /* AFURLRequestSerialization.m in Sources */,
 				A957DC411D4A238200CFCE29 /* SignUpViewController.m in Sources */,
 				A9E043161D5CAF5B0006E297 /* Recipe.m in Sources */,
+				A9FA281B1D84ADD600760976 /* RefinedSearch.m in Sources */,
 				A98577CA1D54E007006558E7 /* AFURLSessionManager.m in Sources */,
 				A9E043231D5CAF5B0006E297 /* FavsCell.m in Sources */,
 				A9E043151D5CAF5B0006E297 /* HomeVC.m in Sources */,

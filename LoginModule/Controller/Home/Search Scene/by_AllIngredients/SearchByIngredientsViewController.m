@@ -350,10 +350,17 @@
         [arrOfIngResult addObject:[_arrDailyRecipes firstObject]];
     }
     
-   IngredientResultVC *objIngVc = [self.storyboard instantiateViewControllerWithIdentifier:@"IngredientResultVC"];
+    
+    RefinedSearch *objIngVc = [self.storyboard instantiateViewControllerWithIdentifier:@"RefinedSearch"];
     objIngVc.searchedResult = arrOfIngResult;
     objIngVc.finalResult = arrF;
     [self.navigationController pushViewController:objIngVc animated:true];
+ 
+    
+//   IngredientResultVC *objIngVc = [self.storyboard instantiateViewControllerWithIdentifier:@"IngredientResultVC"];
+//    objIngVc.searchedResult = arrOfIngResult;
+//    objIngVc.finalResult = arrF;
+//    [self.navigationController pushViewController:objIngVc animated:true];
 }
 
 
